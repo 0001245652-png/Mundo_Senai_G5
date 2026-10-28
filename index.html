@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Senai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="brand-title">Mundo Senai</h1>
+
+        <main class="main-card">
+            <div class="lamp-wrapper" id="lampWrapper">
+                <div class="lamp-glow-effect"></div>
+
+                <svg class="lamp-svg" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="lampGradientOn" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#38bdf8" />
+                            <stop offset="50%" stop-color="#a855f7" />
+                            <stop offset="100%" stop-color="#f472b6" />
+                        </linearGradient>
+                    </defs>
+
+                    <path class="lamp-glass" d="M 50 10 A 35 35 0 0 0 22 62 C 22 75 32 82 35 92 L 65 92 C 68 82 78 75 78 62 A 35 35 0 0 0 50 10 Z" />
+                    <path class="lamp-filament" d="M 40 90 L 42 60 L 47 50 L 53 50 L 58 60 L 60 90" fill="none" />
+                    <circle cx="50" cy="48" r="3" class="lamp-filament" fill="currentColor" />
+                    <path class="lamp-base" d="M 35 93 L 65 93 L 62 102 L 38 102 Z" />
+                    <path class="lamp-base" d="M 37 104 L 63 104 L 60 111 L 40 111 Z" opacity="0.8" />
+                    <path class="lamp-base" d="M 42 113 L 58 113 L 54 118 L 46 118 Z" opacity="0.6" />
+                </svg>
+            </div>
+
+            <button class="action-button" id="btnToggle" onclick="alternarLampada()">
+                <div class="spinner" id="btnSpinner"></div>
+                <svg class="button-icon" id="btnIcon" viewBox="0 0 24 24">
+                    <path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/>
+                </svg>
+                <span id="btnText">Ligar Lâmpada</span>
+            </button>
+
+            <div class="status-container" id="statusContainer">
+                <span class="status-label">Status do Servidor</span>
+                <div class="status-badge">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="statusMessage">Pronto</span>
+                </div>
+            </div>
+
+            <div class="simulation-toggle">
+                <span>Modo Simulação (Offline):</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="simularCheck" checked onchange="atualizarModoSimulacao()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </main>
+
+        <footer class="footer-text">
+            Mundo Senai — Experiência Interativa
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
